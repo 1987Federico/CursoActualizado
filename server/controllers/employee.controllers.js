@@ -9,7 +9,12 @@ employeeCtrl.getEmployees=async(req,res)=>{
 };
 
 employeeCtrl.createEmployees=async(req,res)=>{
-    const employee=new Employee(req.body);
+    const employee=new Employee({
+        name:req.body.name,
+        position:req.body.position,
+        office:req.body.office,
+        salario:req.body.salario
+    });
     await employee.save();
     res.json({
             'status':'Empleado guardado'
