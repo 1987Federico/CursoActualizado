@@ -9,12 +9,12 @@ const {mongoose} = require('./database');
 app.set('port',process.env.PORT || 3000);
 
 //Middlewares
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors({origin:'http://localhost:4200'}));
+//app.use(cors({origin:'http://localhost:4200'}));
 
 //Rouotes
-app.use('/api/employees',require('./routes/employee.routes'));
+app.use('/api/employees',require('./aplicacion/routes'));
 
 //Inicio servidor
 app.listen(app.get('port'),()=>{
