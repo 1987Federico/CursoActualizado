@@ -12,7 +12,7 @@ const empSchema = Joi.object({
   office: Joi
     .string()
     .required(),
-  salario: Joi
+  salary: Joi
     .number()
     .required()
 })

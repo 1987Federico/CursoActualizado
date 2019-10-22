@@ -19,11 +19,10 @@ employeeCtrl.getEmployees=async(req,res)=>{
 };
 
 employeeCtrl.getEmployees=async(req,res)=>{
-    const salario=req.params.salario;
-    console.log(salario);
+    
     const data = await empSchema.getAll();
     if (data){
-        const emp=await employeeBl.getSalary(data,salario);
+        const emp=await employeeBl.getSalario(data,req.query.salario);
         
         if(emp)
         {
@@ -31,7 +30,7 @@ employeeCtrl.getEmployees=async(req,res)=>{
         }else{
             res.status(500).json({
                 "success":true,
-                "msg":"No employee salary"
+                "msg":"No employee salario"
             })
         }
     }else{
@@ -90,7 +89,7 @@ employeeCtrl.updateEmployees=async(req,res)=>{
             id:req.params.id,
             name:req.body.name,
             office:req.body.office,
-            salary:req.body.salary
+            salario:req.body.salario
         }
         const result=await empSchema.update(emp);
         if (result){

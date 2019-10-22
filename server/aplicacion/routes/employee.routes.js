@@ -7,7 +7,7 @@ router.get('/',employee.getEmployees);
 
 router.post('/',employee.createEmployees);
 
-router.get('/:salary',employee.getEmployees)
+router.get('/:salario',employee.getEmployees)
 
 router.get('/:id',employee.getIdEmployees);
 

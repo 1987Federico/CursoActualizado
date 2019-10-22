@@ -1,8 +1,6 @@
 const employeeBl={};
 
-employeeBl.getSalary=async(data,salario)=>{
-   console.log(salario);
-   console.log(data);
+employeeBl.getSalario=async(data,salario)=>{
    let emp=data.filter(element=>element.salario > salario)
    return emp; 
 };
